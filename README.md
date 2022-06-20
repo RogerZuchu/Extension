@@ -25,7 +25,9 @@ extension UIViewController{
 
 
 # extension load Image From Internet
+
 ```
+install pod 'Nuke', '~> 9.0'
 import Nuke
 extension UIImageView {
     func loadUrl(_ url: String?) {
