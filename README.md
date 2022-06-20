@@ -22,3 +22,14 @@ extension UIViewController{
     }
 }
 ```
+
+
+# extension load Image From Internet
+```
+import Nuke
+extension UIImageView {
+    func loadUrl(_ url: String?) {
+        Nuke.loadImage(with: URL(string: url!)!, into: self)
+    }
+}
+```
