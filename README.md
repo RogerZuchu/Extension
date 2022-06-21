@@ -40,8 +40,11 @@ extension UIImageView {
 # extension cut String
 
 offsetBy 0 là từ bên trái qua bên phải
+
 offsetBy -16 là từ bên phải qua bên trái
+
 result laf chuỗi sau khi cắt
+
 string là 1 chuỗi nào đó
 ```
 let string = self.user.created_at!
