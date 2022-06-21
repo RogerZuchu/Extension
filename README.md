@@ -13,7 +13,7 @@ extension UIViewController{
 ```
 
 
-# extension bar
+# extension  bar
 
 ```
 extension UIViewController{
@@ -65,6 +65,35 @@ func removeDecimal(result: Double) -> String {
 ```
 
 
+# extension check internet Alamofire
+
+```
+import Alamofire
+
+public class InternetConnectionManager {
+    static var shared = InternetConnectionManager()
+    private init() {
+    }
+    func isConnectedToInternet() ->Bool {
+        return NetworkReachabilityManager()!.isReachable
+    } 
+}
+```
+
+
+# extension lưu hình ảnh vào cache để load khi offline
+```
+  func loadUrl(_ url: String?) {
+        ImageCache.shared.costLimit = 1024 * 1024 * 100 // 100 MB
+        ImageCache.shared.countLimit = 100
+        ImageCache.shared.ttl = 120 // Invalidate image after 120 sec
+        var url1 = URL(string: url!)
+        // Read and write images
+        let request = ImageRequest(url: url1!)
+        let image = ImageCache.shared[request]
+        Nuke.loadImage(with: URL(string: url!)!, into: self)
+    }
+```
 
     
 
