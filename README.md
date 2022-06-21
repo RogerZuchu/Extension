@@ -98,6 +98,24 @@ extension UIImageView {
 }
 ```
 
+
+# extension load image với data và GCD
+```
+extension UIImageView {
+    func loadImageLocal(url: String) {
+        DispatchQueue.global().async { [weak self] in
+            if let data = try? Data(contentsOf: URL(string: url)!) {
+                if let image = UIImage(data: data) {
+                    DispatchQueue.main.async {
+                        self!.image = image
+                    }
+                }
+            }
+        }
+    }
+}
+```
+
     
 
                     
