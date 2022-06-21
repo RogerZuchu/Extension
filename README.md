@@ -35,3 +35,35 @@ extension UIImageView {
     }
 }
 ```
+
+
+# extension cut String
+
+offsetBy 0 là từ bên trái qua bên phải
+offsetBy -16 là từ bên phải qua bên trái
+result laf chuỗi sau khi cắt
+string là 1 chuỗi nào đó
+```
+let string = self.user.created_at!
+let start = string.index(string.startIndex,offsetBy: 0)
+let end = string.index(string.endIndex,offsetBy: -16)
+let result = string[start..<end]
+self.lblCreateAt.text = "Since:  \(result)"
+self.lblCreateAt.textColor = .white
+```
+
+
+# extension remove dấu phẩy trong số thập phân
+```
+func removeDecimal(result: Double) -> String {
+            let value = String(format: "%g", result)
+            return value
+}
+```
+
+
+
+    
+
+                    
+                   
