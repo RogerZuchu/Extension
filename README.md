@@ -3,11 +3,12 @@
 # extension navDirection
 ```
 extension UIViewController{
-    func directionToViewController(nameStoryboard:String,withIdentifier:String){
+    static func createInstantiate(nameStoryboard:String,withIdentifier:String)->UIViewController{
         let storyboard = UIStoryboard(name: nameStoryboard, bundle: nil)
         let gotoNextStoryboard = storyboard.instantiateViewController(withIdentifier: withIdentifier) as! UIViewController
-        self.navigationController?.pushViewController(gotoNextStoryboard, animated: true)
-    }  
+        return gotoNextStoryboard
+    }
+    
 }
 
 ```
@@ -47,12 +48,12 @@ result là chuỗi sau khi cắt
 
 string là 1 chuỗi nào đó
 ```
-let string = self.user.created_at!
-let start = string.index(string.startIndex,offsetBy: 0)
-let end = string.index(string.endIndex,offsetBy: -16)
-let result = string[start..<end]
-self.lblCreateAt.text = "Since:  \(result)"
-self.lblCreateAt.textColor = .white
+    let string = self.user.created_at!
+    let start = string.index(string.startIndex,offsetBy: 0)
+    let end = string.index(string.endIndex,offsetBy: -16)
+    let result = string[start..<end]
+    self.lblCreateAt.text = "Since:  \(result)"
+    self.lblCreateAt.textColor = .white
 ```
 
 
@@ -83,6 +84,7 @@ public class InternetConnectionManager {
 
 # extension lưu hình ảnh vào cache để load khi offline
 ```
+extension UIImageView {
   func loadUrl(_ url: String?) {
         ImageCache.shared.costLimit = 1024 * 1024 * 100 // 100 MB
         ImageCache.shared.countLimit = 100
@@ -93,6 +95,7 @@ public class InternetConnectionManager {
         let image = ImageCache.shared[request]
         Nuke.loadImage(with: URL(string: url!)!, into: self)
     }
+}
 ```
 
     
