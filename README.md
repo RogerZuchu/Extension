@@ -116,7 +116,18 @@ extension UIImageView {
 }
 ```
 
-    
+
+# extension alert button
+``` 
+extension UIViewController{
+    func alert(message: String, title:String) {
+        let alert = UIAlertController(title: nil, message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: title, style: .cancel, handler: nil)
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
+    }
+}
+```
 
                     
                    
